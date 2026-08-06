@@ -1,5 +1,5 @@
-<x-layout>
-    <x-form title="Log In" description="Glad to have you back.">
+<x-layout.layout>
+    <x-form.form title="Log In" description="Glad to have you back.">
         <form action="/login" method="POST" class="mt-10 space-y-4">
             @csrf
 
