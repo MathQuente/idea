@@ -42,7 +42,7 @@ class ProfileController extends Controller
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->has('password') ? $request->password : $user->password
+            'password' => $request->filled('password') ? $request->password : $user->password
         ]);
 
         if($originalEmail !== $request->email) {

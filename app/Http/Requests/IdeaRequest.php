@@ -46,7 +46,7 @@ class IdeaRequest extends FormRequest
             'links' => ['nullable', 'array'],
             'links.*' => ['url', 'max:225'],
             'steps' => ['nullable', 'array'],
-            'steps.*.description' => ['string', 'max:225'],
+            'steps.*.description' => ['required', 'string', 'max:225'],
             'steps.*.completed' => ['boolean'],
             'image' => ['nullable', 'image', 'max:5120']
         ];

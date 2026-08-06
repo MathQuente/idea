@@ -17,11 +17,11 @@
         @endif
 
         <div class="space-y-6">
-            <x-form.field label="Title" name="title" placeholder="Enter an idea for your title" autofocos required
+            <x-form.field label="Title" name="title" placeholder="Enter an idea for your title" autofocus required
                 :value="$idea->title" />
 
             <div class="space-y-2">
-                <label for="status" class="label"">Status</label>
+                <label for="status" class="label">Status</label>
                 <div class="flex gap-x-3">
                     @foreach (App\IdeaStatus::cases() as $status)
                         <button type="button" @click="status = @js($status->value)" class="btn flex-1 h-10"
@@ -36,7 +36,7 @@
             </div>
 
             <x-form.field label="Description" name="description" type="textarea" placeholder="Describe your idea..."
-                autofocos :value="$idea->description" />
+                autofocus :value="$idea->description" />
 
             <div class="space-y-2">
                 <label for="image" class="label">Featured Image</label>

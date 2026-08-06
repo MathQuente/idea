@@ -4,6 +4,7 @@ namespace App\Actions;
 
 use App\Models\Idea;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class UpdateIdea
 {
@@ -18,6 +19,10 @@ class UpdateIdea
     ])->toArray();
 
     if ($attributes['image'] ?? false) {
+      if ($idea->image_path) {
+        Storage::disk('public')->delete($idea->image_path);
+      }
+
       $data['image_path'] = $attributes['image']->store('ideas', 'public');
     }
 

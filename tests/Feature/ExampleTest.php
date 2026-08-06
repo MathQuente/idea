@@ -1,7 +1,9 @@
 <?php
 
-test('the application returns a successful response', function () {
+test('a guest visiting the root is redirected to the ideas index, then to login', function () {
     $response = $this->get('/');
+    $response->assertRedirect('/ideas');
 
-    $response->assertStatus(200);
+    $response = $this->get('/ideas');
+    $response->assertRedirect(route('login'));
 });
